@@ -4,8 +4,41 @@
     <title>Young Planner - 언젠가</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <script>
+        function linkssetcolor(color) {
+            var alist = document.querySelectorAll('a');
+            var i=0;
+                while(i<alist.length){
+                    alist[i].style.color = color;
+                    i=i+1;
+                }    
+        }
+        function bodysetcolor(color) {
+            document.querySelector('body').style.color = color;
+        }
+        function bodybacksetcolor(color) {
+            document.querySelector('body').style.backgroundColor = color;
+        }
+        function nightdayhandler(self) {
+            var target = document.querySelector('body');
+            if(self.value==='Night') {
+                bodybacksetcolor('black');
+                bodysetcolor('white');
+                self.value='Day';
+                linkssetcolor('powderblue');
+            } else {
+                bodybacksetcolor('white');
+                bodysetcolor('black');
+                self.value='Night';
+                linkssetcolor('blue');
+                }
+            }
+    </script>
 </head>
 <body>
+    <input type="button" value="Night" onclick="
+      nightdayhandler(this);  
+    ">
     <h1><a href="index.html">Young Planner</a></h1>
     <div id="grid">
         <ol>
